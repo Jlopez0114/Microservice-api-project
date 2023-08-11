@@ -1,4 +1,4 @@
-<include a CircleCI status badge, here>
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/Jlopez0114/Microservice-api-project/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/Jlopez0114/Microservice-api-project/tree/master)
 
 ## Project Overview
 
@@ -16,8 +16,6 @@ Your project goal is to operationalize this working, machine learning microservi
 * Configure Kubernetes and create a Kubernetes cluster
 * Deploy a container using Kubernetes and make a prediction
 * Upload a complete Github repo with CircleCI to indicate that your code has been tested
-
-You can find a detailed [project rubric, here](https://review.udacity.com/#!/rubrics/2576/view).
 
 **The final implementation of the project will showcase your abilities to operationalize production microservices.**
 
@@ -45,6 +43,6 @@ source .devops/bin/activate
 ### Kubernetes Steps
 
 * Setup and Configure Docker locally
-* Setup and Configure Kubernetes locally
+* Setup and Configure Kubernetes locally and start minikube
 * Create Flask app in Container
 * Run via kubectl
