@@ -3,9 +3,7 @@ from flask.logging import create_logger
 import logging
 
 import pandas as pd
-#from sklearn.externals import joblib
-#import joblib
-import joblib #changed
+from sklearn.externals import joblib
 from sklearn.preprocessing import StandardScaler
 
 app = Flask(__name__)
@@ -22,7 +20,7 @@ def scale(payload):
 
 @app.route("/")
 def home():
-    html = "<h3>Sklearn Prediction Home</h3>"
+    html = f"<h3>Sklearn Prediction Home</h3>"
     return html.format(format)
 
 @app.route("/predict", methods=['POST'])
@@ -57,7 +55,7 @@ def predict():
     
     # Logging the input payload
     json_payload = request.json
-    LOG.info("JSON payload: \n"+json_payload)
+    LOG.info(f"JSON payload: \n{json_payload}")
     inference_payload = pd.DataFrame(json_payload)
     LOG.info(f"Inference payload DataFrame: \n{inference_payload}")
     # scale the input
@@ -65,7 +63,7 @@ def predict():
     # get an output prediction from the pretrained model, clf
     prediction = list(clf.predict(scaled_payload))
     # TO DO:  Log the output prediction value
-    LOG.info(f"Prediction: {prediction}")
+    LOG.info(f"Prediction Output: \n{prediction}")
     return jsonify({'prediction': prediction})
 
 if __name__ == "__main__":
